@@ -1,0 +1,9 @@
+node_modules/
+.env
+logs/
+
+# Contains live affiliate API keys
+cURL.txt
+
+# Customer data exports
+*.xlsx

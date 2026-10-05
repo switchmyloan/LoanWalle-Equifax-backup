@@ -1,0 +1,24 @@
+{
+  "name": "loanwalle-status-cron",
+  "version": "1.0.0",
+  "description": "Polls the LoanWalle affiliate user-status API for each lead and persists every response to ClickHouse",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "once": "node src/once.js",
+    "due": "node src/once.js --dry-run",
+    "serve": "node src/server.js"
+  },
+  "dependencies": {
+    "@clickhouse/client": "^1.23.1",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "helmet": "^8.0.0",
+    "morgan": "^1.10.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

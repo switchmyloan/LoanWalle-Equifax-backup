@@ -1,0 +1,35 @@
+{
+  "apps": [
+    {
+      "name": "Loanwalle-Status-Cron",
+      "script": "src/index.js",
+      "cwd": "/home/ubuntu/LoanWalle",
+      "instances": 1,
+      "autorestart": true,
+      "max_memory_restart": "300M",
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "out_file": "logs/out.log",
+      "error_file": "logs/err.log",
+      "merge_logs": true,
+      "time": true
+    },
+    {
+      "name": "Loanwalle-API[5011]",
+      "script": "src/server.js",
+      "cwd": "/home/ubuntu/LoanWalle",
+      "instances": 1,
+      "autorestart": true,
+      "max_memory_restart": "300M",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": 5011
+      },
+      "out_file": "logs/api-out.log",
+      "error_file": "logs/api-err.log",
+      "merge_logs": true,
+      "time": true
+    }
+  ]
+}
